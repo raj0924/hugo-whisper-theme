@@ -33,3 +33,17 @@ function addHeaderAnchors(content) {
         }
     }
 }
+
+function selectText(divId) {
+    if (document.selection) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(divId));
+        range.select();
+        document.execCommand('copy');
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(divId));        
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+    }
+}

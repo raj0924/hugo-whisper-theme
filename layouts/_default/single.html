@@ -3,8 +3,9 @@
 {{ define "header_classes" }}{{ end }}
 
 {{ define "main" }}
+<button class = "button" onclick="selectText('divId')" style="float: right;">Select</button>
 <h1 class="title">{{.Title}}</h1>
-<div class="content {{if .Site.Params.enable_anchor_link}}{{ "anchor-link-enabled" }}{{ end }}">
+<div id = "divId" class="content {{if .Site.Params.enable_anchor_link}}{{ "anchor-link-enabled" }}{{ end }}">
   {{.Content}}
 </div>
 </div>
